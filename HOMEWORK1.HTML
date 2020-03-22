@@ -2,6 +2,10 @@
 <html lang="en">
 
 <head>
+    <!--webpage title-->
+    <title>
+        나홀로 쇼핑몰
+    </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -12,6 +16,8 @@
     <!-- 구글폰트 -->
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700&display=swap&subset=korean"
         rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- style -->
     <style type="text/css">
@@ -44,13 +50,42 @@
             right: 0;
         }
     </style>
+    <script>
+        function order() {
+            let name = $('order_name').val()
+            let count = $('order_count').val()
+            let address = $('order_address').val()
+            let phone = $('order_phone').val()
 
+            if (name == ' ') {
+                alert('이름을 입력해주세요')
+                $('order_name').focus()
+            }
+            else if (count == ' ') {
+                alert('수량을 선택해주세요')
+                $('order_count').focus()
+
+            }
+            else if (address = ' ') {
+                alert('주소를 입력해주세요')
+                $('order_address').focus()
+
+            }
+            else if (phone == ' ') {
+                alert('전화번호를 입력하세요')
+                $('order_phone').focus()
+
+            }
+            else {
+                alert('주문이 완료되었습니다')
+            }}
+
+    </script>
 </head>
 
 <body>
 
-    <img src="file:///C:/Users/hee19/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/dd8d595c72ccf2c8042ccacd5fdb8331.jpg"
-        width="700" height="400">
+    <img src="IMG_6474-480x600.jpg" width="700" height="400">
     <p></p>
     <div class="product-title">
         <font size="6">Fisherman Sweatshirt</font> &nbsp;&nbsp;&nbsp; <font size="2">Price : 189,000 won</font>
@@ -65,15 +100,16 @@
         <div class="input-group-prepend">
             <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
         </div>
-        <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        <input type="text" class="form-control" id="order_name" aria-label="Default"
+            aria-describedby="inputGroup-sizing-default">
     </div>
     <div class="input-group mb-3" style="width: 20%;">
         <div class="input-group-prepend">
             <span class="input-group-text" id="inputGroup-sizing-default">Quantity
             </span>
         </div>
-        <select class="custom-select">
-            <option selected></option>
+        <select class="custom-select" id="order_count">
+            <option selected value> 수량을 선택하세요 </option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -86,18 +122,18 @@
         <div class="input-group-prepend">
             <span class="input-group-text" id="inputGroup-sizing-default">Address</span>
         </div>
-        <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        <input type="text" class="form-control" id="order_address" aria-label="Default"
+            aria-describedby="inputGroup-sizing-default">
     </div>
     <div class="input-group mb-3" style="width: 20%;">
         <div class="input-group-prepend">
             <span class="input-group-text" id="inputGroup-sizing-default">Phone</span>
         </div>
-        <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        <input type="text" class="form-control" id="order_phone" aria-label="Default"
+            aria-describedby="inputGroup-sizing-default">
     </div>
 
-
-
-    <div><button type="button" class="btn btn-secondary">Order</button></div>
+    <div><button onclick="order()" type="button" class="btn btn-secondary">Order</button></div>
 
 </body>
 
