@@ -52,28 +52,28 @@
     </style>
     <script>
         function order() {
-            let name = $('order_name').val()
-            let count = $('order_count').val()
-            let address = $('order_address').val()
-            let phone = $('order_phone').val()
+            let name = $('#order_name').val()
+            let count = $('#order_count').val()
+            let address = $('#order_address').val()
+            let phone = $('#order_phone').val()
 
-            if (name == ' ') {
+            if (name == '') {
                 alert('이름을 입력해주세요')
-                $('order_name').focus()
+                $('#order_name').focus()
             }
-            else if (count == ' ') {
+            else if (count == '') {
                 alert('수량을 선택해주세요')
-                $('order_count').focus()
+                $('#order_count').focus()
 
             }
-            else if (address = ' ') {
+            else if (address = '') {
                 alert('주소를 입력해주세요')
-                $('order_address').focus()
+                $('#order_address').focus()
 
             }
-            else if (phone == ' ') {
+            else if (phone == '') {
                 alert('전화번호를 입력하세요')
-                $('order_phone').focus()
+                $('#order_phone').focus()
 
             }
             else {
